@@ -6,11 +6,11 @@ const prompt = PromptSync();
     public idade: number;
     public local: string; 
     public nome: string;
-    public nivelDeEscolaridade: string;
+    public nivelDeEscolaridade: number;
     
    
     
-        constructor (idade: number, local: string, nome: string, nivelDeEscolaridade: string){
+        constructor (idade: number, local: string, nome: string, nivelDeEscolaridade: number){
 
             this.nome = nome
             this.local = local

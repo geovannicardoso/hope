@@ -25,6 +25,24 @@ var Adult = /** @class */ (function (_super) {
         _this.filhoA = filhoA;
         return _this;
     }
+    Object.defineProperty(Adult.prototype, "escolaridade", {
+        get: function () {
+            if (this.nivelDeEscolaridade == 1) {
+                return "Não se aplica";
+            }
+            else if (this.nivelDeEscolaridade == 2) {
+                return "Fundamental";
+            }
+            else if (this.nivelDeEscolaridade == 3) {
+                return "Médio";
+            }
+            else if (this.nivelDeEscolaridade == 4) {
+                return "Superior";
+            }
+        },
+        enumerable: false,
+        configurable: true
+    });
     Adult.prototype.cpf = function () {
         console.log("CPF: ".concat(this.cpfA));
     };

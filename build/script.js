@@ -5,11 +5,13 @@ var addUsuario_1 = require("./addUsuario");
 var mostrarUsuario_1 = require("./mostrarUsuario");
 var listarUsuarios_1 = require("./listarUsuarios");
 var excluirLista_1 = require("./excluirLista");
-var MediaIdade_1 = require("./MediaIdade");
+var excluirUsuario_1 = require("./excluirUsuario");
+var alterarUsuario_1 = require("./alterarUsuario");
 var PromptSync = require("prompt-sync");
+var tratamendoDados_1 = require("./tratamendoDados");
 var prompt = PromptSync();
-var opcao = 0;
 var adultos = [];
+var opcao = 0;
 do {
     console.clear();
     console.log("-=-= MENU PRINCIPAL =-=-");
@@ -33,53 +35,24 @@ do {
                 console.clear();
                 switch (escolha) {
                     case 1:
-                        adultos.push((0, addUsuario_1.addUsuario)());
+                        (0, addUsuario_1.addUsuario)(adultos);
                         var poderExcluir = true;
                         break;
                     case 2:
-                        (poderExcluir) ? (0, mostrarUsuario_1.mostrarUsuario)(adultos) : prompt('[ERROR] Usuário já excluido!');
-                        prompt('');
+                        (0, mostrarUsuario_1.mostrarUsuario)(poderExcluir, adultos);
                         break;
                     case 3:
-                        if (poderExcluir) {
-                            (0, mostrarUsuario_1.mostrarUsuario)(adultos);
-                            var alterar = prompt('Deseja alterar este usuário? (S/N)');
-                            if (alterar == 'S' || alterar == 's') {
-                                adultos.pop();
-                                console.log('Usuário apagado! Digite as alterações: ');
-                                adultos.push((0, addUsuario_1.addUsuario)());
-                            }
-                            else {
-                                prompt('alteração cancelada!');
-                            }
-                        }
-                        else {
-                            prompt('[ERROR] Usuário já foi excluido!');
-                        }
+                        (0, alterarUsuario_1.alterarUsuario)(poderExcluir, adultos);
                         break;
                     case 4:
-                        if (poderExcluir) {
-                            (0, mostrarUsuario_1.mostrarUsuario)(adultos);
-                            var excluir = prompt('Deseja excluir esse usuário? (S/N)');
-                            if (excluir == 'S' || excluir == 's') {
-                                adultos.pop();
-                                poderExcluir = false;
-                                prompt('usuário excluido com sucesso!');
-                            }
-                            else {
-                                prompt('Exclusão cancelada!');
-                            }
-                        }
-                        else {
-                            prompt('[ERROR] Usuário já foi excluido!');
-                        }
+                        (0, excluirUsuario_1.excluirUsuario)(poderExcluir, adultos);
                         break;
                     case 5:
                         prompt('Saindo...');
                         break;
                     default:
                         console.log('[ERROR] Tente novamente!');
-                        prompt();
+                        prompt('');
                 }
             } while (escolha != 5);
             break;
@@ -91,8 +64,8 @@ do {
                     console.log("-=-= MENU ADMINISTRADOR =-=-");
                     console.log("[1] Listar");
                     console.log("[2] Excluir");
-                    console.log("[3] Media idade");
-                    console.log("[4] Saida");
+                    console.log("[3] Escolaridade");
+                    console.log("[4] Sair");
                     escolha_1 = Number(prompt('>> '));
                     console.clear();
                     switch (escolha_1) {
@@ -100,19 +73,17 @@ do {
                             (0, listarUsuarios_1.listarUsuarios)(adultos);
                             break;
                         case 2:
-                            adultos.splice((0, excluirLista_1.excluirLista)(adultos), 1);
-                            prompt('Usuário excluido!');
+                            (0, excluirLista_1.excluirLista)(adultos);
                             break;
                         case 3:
-                            console.log("Media de idade dos usuarios \u00E9: ".concat((0, MediaIdade_1.mediaIdade)(adultos)));
-                            prompt();
+                            (0, tratamendoDados_1.escolaridade)(adultos);
                             break;
                         case 4:
                             prompt('Saindo...');
                             break;
                         default:
                             console.log('[ERROR] Tente novamente!');
-                            prompt();
+                            prompt('');
                     }
                 } while (escolha_1 != 4);
             }

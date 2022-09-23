@@ -11,5 +11,6 @@ function listarUsuarios(adultos) {
         adultos[i].filhos();
         adultos[i].cpf();
     }
+    prompt('Usuários listados!');
 }
 exports.listarUsuarios = listarUsuarios;

@@ -9,6 +9,7 @@ function listarUsuarios(adultos: Adult[]){
       console.log(adultos[i].nivelDeEscolaridade);
       adultos[i].filhos();
       adultos[i].cpf();
-  }
+   }
+   prompt('Usuários listados!');
 }
 export{listarUsuarios};
