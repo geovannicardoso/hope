@@ -1,4 +1,6 @@
 import { Adult } from "./Adult";
+import PromptSync = require("prompt-sync");
+const prompt = PromptSync();
 
 function listarUsuarios(adultos: Adult[]){
    for(let i=0; i<adultos.length; i++){

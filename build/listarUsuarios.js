@@ -1,6 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.listarUsuarios = void 0;
+var PromptSync = require("prompt-sync");
+var prompt = PromptSync();
 function listarUsuarios(adultos) {
     for (var i = 0; i < adultos.length; i++) {
         console.log();

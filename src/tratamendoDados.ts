@@ -81,24 +81,37 @@ function escolaridade(adultos:Adult[]){
         }
         
 
-    }  
-    console.log(`Quantidade pessoa que concluiram o ensino superio: ${sup[0]}`);
-    for ( let i = 1 ; i < naosa[0] ; i++){
+    }
+    for ( let i = 1 ; i <= naosa[0] ; i++){
         naosa[i] = (naosa[i]* 100) /naosa[0];
-    }
-    for ( let i = 1 ; i < fund[0] ; i++){
         fund[i] = (fund[i]* 100) /fund[0];
-    }
-    for ( let i = 1 ; i < medio [0] ; i++){
         medio[i] = (medio[i]* 100) /medio[0];
-    }
-    for ( let i = 1 ; i < sup[0] ; i++){
         sup[i] = (sup[i]* 100) /sup[0];
     }
-    console.log(`Total de pessoas que concluiram o ensino superior: ${sup[0]}`);
-    console.log(sup[1]);
-    console.log(sup[2]);
-    console.log(sup[3]);
+    console.clear();
+    console.log(`\nTotal de pessoas sem escolaridade: ${naosa[0]}`);
+    console.log('Zona central: ' + naosa[1].toFixed(0) + '%');
+    console.log('Zona Norte: ' + naosa[2].toFixed(0) + '%');
+    console.log('Zona Sul: ' + naosa[3].toFixed(0) + '%');
+    console.log('Zona Oeste: ' + naosa[4].toFixed(0) + '%');
+
+    console.log(`\nTotal de pessoas que concluiram o ensino fundamental: ${fund[0]}`);
+    console.log('Zona central: ' + fund[1].toFixed(0) + '%');
+    console.log('Zona Norte: ' + fund[2].toFixed(0) + '%');
+    console.log('Zona Sul: ' + fund[3].toFixed(0) + '%');
+    console.log('Zona Oeste: ' + fund[4].toFixed(0) + '%');
+
+    console.log(`\nTotal de pessoas que concluiram o ensino medio: ${medio[0]}`);
+    console.log('Zona central: ' + medio[1].toFixed(0) + '%');
+    console.log('Zona Norte: ' + medio[2].toFixed(0) + '%');
+    console.log('Zona Sul: ' + medio[3].toFixed(0) + '%');
+    console.log('Zona Oeste: ' + medio[4].toFixed(0) + '%');
+
+    console.log(`\nTotal de pessoas que concluiram o ensino superior: ${sup[0]}`);
+    console.log('Zona central: ' + sup[1].toFixed(0) + '%');
+    console.log('Zona Norte: ' + sup[2].toFixed(0) + '%');
+    console.log('Zona Sul: ' + sup[3].toFixed(0) + '%');
+    console.log('Zona Oeste: ' + sup[4].toFixed(0) + '%');
     prompt ('');
     
 
